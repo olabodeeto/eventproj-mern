@@ -33,6 +33,6 @@ export default function AppContainer() {
       }
     });
     setisLoggedIn(user.login);
-  }, [ userDispatch, profileDispatch]);
+  }, [user.login, userDispatch, profileDispatch]);
   return <>{isLoggedIn ? <AuthNavigation /> : <PublicNavigation />}</>;
 }
