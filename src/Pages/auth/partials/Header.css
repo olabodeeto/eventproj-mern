@@ -1,0 +1,97 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: #5319e6;
+  border-bottom: 1px solid #4d14dc;
+}
+
+.logo {
+  padding: 5px 10px;
+  float: left;
+  font-size: xx-large;
+  font-weight: 800;
+  color: white;
+}
+
+.header ul {
+  padding: 4px 10px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.header ul li {
+  margin-top: 2rem;
+  padding: 2px 0;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.menu {
+  clear: both;
+  min-height: 100vh;
+  position: absolute;
+  background-color: #5319e6;
+  color: white;
+  top: 3rem;
+  left: -1200px;
+  width: 40vw;
+  transition: all ease 0.8s;
+}
+
+.menu-icon {
+  padding: 10px 15px;
+  float: right;
+  position: relative;
+  top: 18px;
+}
+
+.nav-icon {
+  display: block;
+  background: white;
+  width: 18px;
+  height: 2px;
+  position: relative;
+}
+
+.nav-icon::before {
+  display: block;
+  background: white;
+  content: "";
+  width: 18px;
+  height: 2px;
+  position: absolute;
+  top: 6px;
+}
+
+.nav-icon::after {
+  display: block;
+  background: white;
+  content: "";
+  width: 18px;
+  height: 2px;
+  position: absolute;
+  top: -6px;
+}
+#check {
+  display: none;
+}
+#check:checked ~ .menu {
+  left: 0;
+}
+
+#check:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+#check:checked ~ .menu-icon .nav-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+  transition: all ease 0.8s;
+}
+#check:checked ~ .menu-icon .nav-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+  transition: all ease 0.8s;
+}
