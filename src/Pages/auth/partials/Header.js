@@ -12,8 +12,9 @@ export default function Header() {
   const logout = async () => {
     const res = await User.logout();
     if (res === "logout") {
+       userDispatch({ type: "logout", payload: { login: false, userID: "" } });
       history.push("/");
-      userDispatch({ type: "logout", payload: { login: false, userID: "" } });
+     
     }
   };
   return (
